@@ -17,7 +17,7 @@ def build(bld):
 		name='asflib',
 	)
 
-	bld.install_files('${PREFIX}/include', ['asf.h'])
+	bld.install_files('${PREFIX}/include/asf', bld.path.ant_glob('*.h'))
 
 #def set_options(opt):
 #	# options defined if src/ was to be compiled as a standalone module
