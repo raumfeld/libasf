@@ -15,6 +15,7 @@ def build(bld):
 		ccflags='-DDEBUG -g -O0 -ansi -pedantic -Wall -Wextra -Wformat=2 -Wformat-nonliteral -Wformat-security -Wmissing-prototypes -Wstrict-prototypes -Wwrite-strings -fdiagnostics-show-option -Werror=implicit-function-declaration',
 		target='asf',
 		name='asflib',
+                linkflags='-Wl,-soname=libasf-0.1.so'
 	)
 
 	bld.install_files('${PREFIX}/include/asf', bld.path.ant_glob('*.h'))
