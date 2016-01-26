@@ -28,7 +28,7 @@
 static INLINE void
 GetGUID(const void *pointer, asf_guid_t *guid)
 {
-	const uint8_t *data = pointer;
+	const uint8_t *data = (const uint8_t *)pointer;
 	guid->v1 = GetDWLE(data);
 	guid->v2 = GetWLE(data + 4);
 	guid->v3 = GetWLE(data + 6);

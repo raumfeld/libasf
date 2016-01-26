@@ -28,7 +28,7 @@
 static INLINE uint16_t
 GetWLE(const void *pointer)
 {
-	const uint8_t *data = pointer;
+	const uint8_t *data = (const uint8_t *)pointer;
 	return ((uint16_t)data[1] << 8) |
 	       ((uint16_t)data[0]);
 }
@@ -36,7 +36,7 @@ GetWLE(const void *pointer)
 static INLINE uint32_t
 GetDWLE(const void *pointer)
 {
-	const uint8_t *data = pointer;
+	const uint8_t *data = (const uint8_t *)pointer;
 	return ((uint32_t)data[3] << 24) |
 	       ((uint32_t)data[2] << 16) |
 	       ((uint32_t)data[1] <<  8) |
@@ -46,7 +46,7 @@ GetDWLE(const void *pointer)
 static INLINE uint64_t
 GetQWLE(const void *pointer)
 {
-	const uint8_t *data = pointer;
+	const uint8_t *data = (const uint8_t *)pointer;
 	return ((uint64_t)data[7] << 56) |
 	       ((uint64_t)data[6] << 48) |
 	       ((uint64_t)data[5] << 40) |
